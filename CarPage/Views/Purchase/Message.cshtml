@@ -1,0 +1,12 @@
+@{
+    ViewBag.Title = "Purchase Message";
+}
+
+<div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+    <div style="border: 1px solid #ccc; padding: 30px; border-radius: 10px; width: 600px; text-align: center;">
+        <h2>@ViewBag.Message</h2>
+        <div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 20px;">
+            <a href="@Url.Action("Index", "Car")" class="home" style="text-align: center; display: block;">Home Page</a>
+        </div>
+    </div>
+</div>

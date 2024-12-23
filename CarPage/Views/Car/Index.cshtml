@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CarPage.Models.Car>
+<div id="ad-container">
+    @foreach (var car in Model)
+    {
+        <div class="car-ad box">
+            <img src="@car.ImageUrl" alt="@car.Make @car.Model" style="width:200px;height:auto;" />
+            <div class="car-details">
+                <h2>@car.Make @car.Model (@car.Year)</h2>
+                <p>Price: $@car.Price</p>
+                <p>Description: @car.Description</p>
+                 <a href="@Url.Action("Details", "Car", new { id = car.Id })" class="details-link">Details</a>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+     #ad-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .car-ad {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .car-image {
+        width: 200px;
+        height: auto;
+    }
+    .car-details {
+        flex: 1;
+        margin-left: 20px;
+        position: relative;
+    }
+    
+</style>

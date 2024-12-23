@@ -1,0 +1,23 @@
+@model CarPage.Models.Car
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="display: flex; align-items: center;">
+        <div style="margin-right: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="@Model.ImageUrl" alt="@Model.Make @Model.Model" style="width:300px;height:300px;" />
+        </div>
+        <div style="position: relative; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+            <h1>@Model.Make @Model.Model (@Model.Year)</h1>
+            <p><strong>Price:</strong> $@Model.Price</p>
+            <p><strong>Description:</strong> @Model.Description</p>
+            <p><strong>Vehicle Status:</strong> @Model.VehicleStatus</p>
+            <p><strong>Transmission:</strong> @Model.Transmission</p>
+            <p><strong>Fuel Type:</strong> @Model.FuelType</p>
+            <p><strong>Color:</strong> @Model.Color</p>
+            <p><strong>Engine Power:</strong> @Model.EnginePower</p>
+            <form action="/Purchase/Index" method="get" style="position: absolute; bottom: 20px; right: 20px;">
+                <input type="hidden" name="carId" value="@Model.Id" />
+                <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">Purchase</button>
+            </form>
+        </div>
+    </div>
+</div>

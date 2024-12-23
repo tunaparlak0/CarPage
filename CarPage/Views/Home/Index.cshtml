@@ -1,0 +1,48 @@
+@model IEnumerable<CarPage.Models.Car>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to Our Online Website!</h1>
+<p>This is the main page that introduces our website.From now on,we are in here for better service!</p>
+
+<div style="display: flex; flex-direction: column; gap: 10px; width: 200px;">
+    <form action="/Home/About" method="get">
+        <button type="submit" style="padding: 10px 20px; background-color: rgb(204, 18, 136); color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%;">About Us</button>
+    </form>
+    <form action="/Home/Contact" method="get">
+        <button type="submit" style="padding: 10px 20px; background-color: rgb( 204,18, 136); color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%;">Contact Us</button>
+    </form>
+    <a asp-controller="User" asp-action="Register" class="btn btn-primary">Click here for Register</a>
+    <a asp-controller="User" asp-action="List" class="btn btn-primary">View Registered Users</a>
+    @if (User.Identity.IsAuthenticated)
+{
+    <form asp-controller="User" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+}
+else
+{
+    <a asp-controller="User" asp-action="Login" class="btn btn-primary">Login</a>
+
+}
+<p>
+    Kullanıcı Durumu: 
+    @if (User.Identity.IsAuthenticated)
+    {
+        <strong>Giriş Yapılmış</strong>
+    }
+    else
+    {
+        <strong>Giriş Yapılmamış</strong>
+    }
+</p>
+
+    <div>
+    
+
+    
+ 
+<p><a href="/Car">Check out our cars</a></p>
+
+

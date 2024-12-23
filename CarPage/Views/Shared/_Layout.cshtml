@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Tuna's Car Dealership</title>
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    <style>
+         html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        header, footer {
+            background-color: #d7dbe4;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
+            min-height: calc(100vh - 120px); 
+        }
+        .home-link {
+        color: black; 
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>Tuna's Car Dealership</h2>
+            <a href="~/Home/Index" class="home-link">Home</a>
+            
+        </nav>
+    </header>
+    
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+    <footer>
+        <h2>B221202022 - Tuna Parlak       B221202067 - Mustafa Emre Hallı </h2>
+    </footer>
+</body>
+</html>
